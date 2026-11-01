@@ -55,6 +55,12 @@ void loop() {
                      + "\"temperature\":" + String(temperature, 1) + "}";
 
       int httpResponseCode = http.POST(payload);
+      Serial.print("URL: ");
+Serial.println(SERVER_URL);
+Serial.print("ESP32 IP: ");
+Serial.println(WiFi.localIP());
+Serial.print("Result: ");
+Serial.println(HTTPClient::errorToString(httpResponseCode));
 
       Serial.print("HTTP Response code: ");
       Serial.println(httpResponseCode);
